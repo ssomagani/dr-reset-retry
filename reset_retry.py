@@ -31,7 +31,6 @@ def check_and_retry(tuples):
 
 def check_col_for_value_mismatch(tuples, index, value):
     for row in tuples:
-        print(value)
         if(value != row[index]):
             return True
     return False
