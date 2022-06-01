@@ -5,4 +5,4 @@ Testing for below -
 IS_READY = false \
 DRROLE_STATE =STOPPED \
 DRCONS_STATE =DISABLE \
-DRCONS_ISPAUSED =false \
+DRCONS_ISPAUSED =false
