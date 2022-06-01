@@ -4,11 +4,18 @@ import os, time
 from voltdbclient import *
 
 SLEEP_INTERVAL=5
+SERVER='localhost'
+PORT=21212
+USE_SSL=False
+USERNAME='admin'
+PASSWORD='admin'
 
 def main():
-    os.system("voltadmin dr reset");
+    os.system(f'voltadmin dr reset -u {USERNAME} -p {PASSWORD}')
+#    os.system("voltadmin dr reset)
 
-    client = FastSerializer("localhost", 21212)
+    client = FastSerializer(SERVER, PORT, USE_SSL, USERNAME, PASSWORD)
+#   client = FastSerializer(SERVER, PORT)
     proc = VoltProcedure( client, "@Statistics", [FastSerializer.VOLTTYPE_STRING, FastSerializer.VOLTTYPE_INTEGER] )
     response = proc.call([ "xdcr_readiness", 0])
 
