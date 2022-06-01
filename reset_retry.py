@@ -27,10 +27,7 @@ def main():
         check_and_retry(table.tuples)
 
 def check_and_retry(tuples):
-    if (check_col_for_value_mismatch(tuples, 3, 'false') or
-        check_col_for_value_mismatch(tuples, 4, 'STOPPED') or
-        check_col_for_value_mismatch(tuples, 8, 'DISABLE') or
-        check_col_for_value_mismatch(tuples, 10, 'false')):
+    if (check_col_for_value_mismatch(tuples, 4, 'STOPPED')):
         print("Validation Failed. Check values below.")
         print(tuples)
         time.sleep(SLEEP_INTERVAL)
