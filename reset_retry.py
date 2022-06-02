@@ -45,7 +45,7 @@ def main():
 
 def check_and_retry(tuples):
     for row in tuples:
-        if(row[4] == 'PENDING' or row[4] == 'STOPPED'):
+        if(row[4] != 'PENDING' and row[4] != 'STOPPED'):
             logger.warning("Validation Failed. Check values below.")
             logger.warning(tuples)
             time.sleep(SLEEP_INTERVAL)
