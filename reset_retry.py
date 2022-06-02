@@ -27,16 +27,17 @@ def main():
         check_and_retry(table.tuples)
 
 def check_and_retry(tuples):
-    if (check_col_for_value_mismatch(tuples, 4, 'STOPPED')):
+    if (check_col_for_value_mismatch(tuples, 4, ['STOPPED', 'PENDING'])):
         print("Validation Failed. Check values below.")
         print(tuples)
         time.sleep(SLEEP_INTERVAL)
         main()
 
-def check_col_for_value_mismatch(tuples, index, value):
+def check_col_for_value_mismatch(tuples, index, values):
     for row in tuples:
-        if(value != row[index]):
-            return True
+        for value in values:
+            if(value != row[index]):
+                return True
     return False
 
 main()
