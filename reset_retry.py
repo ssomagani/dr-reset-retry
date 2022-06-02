@@ -11,8 +11,8 @@ USERNAME='admin'
 PASSWORD='admin'
 
 def main():
-    os.system(f'voltadmin dr reset -u {USERNAME} -p {PASSWORD}')
-#    os.system("voltadmin dr reset)
+    os.system(f'voltadmin dr reset --force -u {USERNAME} -p {PASSWORD}')
+#    os.system("voltadmin dr reset --force)
 
     client = FastSerializer(SERVER, PORT, USE_SSL, USERNAME, PASSWORD)
 #   client = FastSerializer(SERVER, PORT)
