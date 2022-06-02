@@ -14,6 +14,8 @@ def main():
     os.system(f'voltadmin dr reset --force -u {USERNAME} -p {PASSWORD}')
 #    os.system("voltadmin dr reset --force)
 
+    time.sleep(SLEEP_INTERVAL)
+
     client = FastSerializer(SERVER, PORT, USE_SSL, USERNAME, PASSWORD)
 #   client = FastSerializer(SERVER, PORT)
     proc = VoltProcedure( client, "@Statistics", [FastSerializer.VOLTTYPE_STRING, FastSerializer.VOLTTYPE_INTEGER] )
