@@ -44,7 +44,7 @@ def main():
         check_and_retry(table.tuples)
 
 def check_and_retry(tuples):
-    if (check_col_for_value_mismatch(tuples, 4, ['STOPPED', 'PENDING'])):
+    if (check_col_for_value_mismatch(tuples, 4, ['PENDING', 'STOPPED'])):
         logger.warning("Validation Failed. Check values below.")
         logger.warning(tuples)
         time.sleep(SLEEP_INTERVAL)
@@ -53,8 +53,8 @@ def check_and_retry(tuples):
 def check_col_for_value_mismatch(tuples, index, values):
     for row in tuples:
         for value in values:
-            if(value != row[index]):
-                return True
-    return False
+            if(value == row[index]):
+                return False
+    return True
 
 init()
