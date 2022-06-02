@@ -13,4 +13,4 @@ Python3
 ## Explanation
 Testing for below in the output of `exec @Statistics xdcr_readiness 0` -
 
-`DRROLE_STATE =STOPPED`
+`DRROLE_STATE =STOPPED` or `DRROLE_STATE=PENDING`
