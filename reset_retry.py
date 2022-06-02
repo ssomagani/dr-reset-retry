@@ -9,10 +9,12 @@ PORT=21212
 USE_SSL=False
 USERNAME='admin'
 PASSWORD='admin'
+RUN_COUNTER=0
 
 def main():
     os.system(f'voltadmin dr reset --force -u {USERNAME} -p {PASSWORD}')
 #    os.system("voltadmin dr reset --force)
+    RUN_COUNTER +=1
 
     time.sleep(SLEEP_INTERVAL)
 
